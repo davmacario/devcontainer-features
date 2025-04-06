@@ -1,0 +1,32 @@
+{
+  "name": "Dev Environment",
+  "id": "dev-environment",
+  "version": "1.0.0",
+  "description": "Set up custom CLI-based development environment by providing a link to a 'dotfiles' repository containing an install script.",
+  "options": {
+    "dotfiles_repo": {
+      "type": "string",
+      "proposals": [],
+      "description": "URL of dotfiles repository."
+    },
+    "dotfiles_branch": {
+      "type": "string",
+      "proposals": [],
+      "default": "main",
+      "description": "Branch of the dotfiles repository to be used"
+    },
+    "dotfiles_install_script": {
+      "type": "string",
+      "proposals": ["setup.sh", "install.sh"],
+      "default": "setup.sh",
+      "description": "Path to the script used to install dev environment requirements with respect to the dotfiles repository root."
+    }
+  },
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/common-utils": {
+      "configureZshAsDefaultShell": true,
+      "username": "dev"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  }
+}
