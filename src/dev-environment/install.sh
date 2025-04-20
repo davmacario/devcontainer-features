@@ -25,7 +25,6 @@ echo "Repo: $REPO_DOTFILES"
 echo "Branch: $CUSTOM_BRANCH"
 echo "Entrypoint: $ENTRYPOINT"
 
-/bin/su - "$_REMOTE_USER" <<EOF
 cd "${_REMOTE_USER_HOME}" || { echo "HOME not set"; exit 1; }
 if [ ! -d "./dotfiles" ]; then
     git clone "$REPO_DOTFILES" ./dotfiles
@@ -36,5 +35,6 @@ if [ -n "$CUSTOM_BRANCH" ]; then
 fi
 git pull -p
 
+chown -R "$_REMOTE_USER":"$_REMOTE_USER" .
+
 ./$ENTRYPOINT
-EOF
