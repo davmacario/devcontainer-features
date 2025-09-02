@@ -23,10 +23,7 @@
     }
   },
   "dependsOn": {
-    "ghcr.io/devcontainers/features/common-utils": {
-      "configureZshAsDefaultShell": true,
-      "username": "dev"
-    },
+    "ghcr.io/devcontainers/features/common-utils": {},
     "ghcr.io/devcontainers/features/git:1": {}
   }
 }
