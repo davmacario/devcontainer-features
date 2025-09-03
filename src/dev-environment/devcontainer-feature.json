@@ -1,7 +1,7 @@
 {
   "name": "Dev Environment",
   "id": "dev-environment",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Set up custom CLI-based development environment by providing a link to a 'dotfiles' repository containing an install script.",
   "options": {
     "dotfiles_repo": {
