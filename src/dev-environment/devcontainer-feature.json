@@ -20,14 +20,14 @@
       "proposals": ["setup.sh", "install.sh"],
       "default": "setup.sh",
       "description": "Path to the script used to install dev environment requirements with respect to the dotfiles repository root."
-    },
-    "user": {
-      "type": "string",
-      "default": "${remoteArg:USER}"
     }
   },
   "dependsOn": {
-    "ghcr.io/devcontainers/features/common-utils": {},
+    "ghcr.io/devcontainers/features/common-utils": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "installOhMyZshConfig": false
+    },
     "ghcr.io/devcontainers/features/git:1": {}
   }
 }
