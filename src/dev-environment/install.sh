@@ -15,7 +15,15 @@ check_requirements() {
     done
 }
 
+check_root() {
+    if [ "$(id -u)" -ne 0 ]; then
+        echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
+        exit 1
+    fi
+}
+
 check_requirements
+check_root
 
 REPO_DOTFILES=${DOTFILES_REPO:-""}
 ENTRYPOINT=${DOTFILES_INSTALL_SCRIPT:-""}
@@ -35,6 +43,6 @@ if [ -n "$CUSTOM_BRANCH" ]; then
 fi
 git pull -p
 
-chown -R "$_REMOTE_USER":"$_REMOTE_USER" .
+chown -R "$_REMOTE_USER" .
 
 ./$ENTRYPOINT

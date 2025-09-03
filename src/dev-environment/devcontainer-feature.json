@@ -23,7 +23,11 @@
     }
   },
   "dependsOn": {
-    "ghcr.io/devcontainers/features/common-utils": {},
+    "ghcr.io/devcontainers/features/common-utils": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "installOhMyZshConfig": false
+    },
     "ghcr.io/devcontainers/features/git:1": {}
   }
 }
