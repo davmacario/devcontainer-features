@@ -35,6 +35,6 @@ if [ -n "$CUSTOM_BRANCH" ]; then
 fi
 git pull -p
 
-chown -R "$_REMOTE_USER":"$_REMOTE_USER" .
+chown -R "$_REMOTE_USER_UID":"$_REMOTE_USER_GID" .
 
 ./$ENTRYPOINT
